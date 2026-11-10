@@ -1,0 +1,102 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "a9f5ceb9719a00ebb136",
+  "position": {
+    "x": 1481.9946732776093,
+    "y": 37.049866831940236,
+    "z": 12,
+    "height": 236.70748253739592,
+    "width": 378.73197205983348,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "treemap",
+    "query": {
+      "queryState": {
+        "Details": {
+          "projections": []
+        },
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "clean"
+                    }
+                  },
+                  "Property": "Zone Name"
+                }
+              },
+              "queryRef": "clean.Zone Name",
+              "nativeQueryRef": "Zone Name",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "clean"
+                        }
+                      },
+                      "Property": "Number of HH"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(clean.Number of HH)",
+              "nativeQueryRef": "Average of Number of HH"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e400fe7f7ecbcadd4a09",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "clean"
+              }
+            },
+            "Property": "Zone Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d2a51835d37e90e1b0ba",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "clean"
+                  }
+                },
+                "Property": "Number of HH"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "73bee41e70d5dd95e915",
+  "position": {
+    "x": 1481.9946732776093,
+    "y": 681.30588452067877,
+    "z": 13,
+    "height": 337.56545335767765,
+    "width": 378.73197205983348,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "clean"
+                    }
+                  },
+                  "Property": "Ward name"
+                }
+              },
+              "queryRef": "clean.Ward name",
+              "nativeQueryRef": "Ward name",
+              "active": true
+            }
+          ]
+        },
+        "Play": {
+          "projections": []
+        },
+        "Series": {
+          "projections": []
+        },
+        "Size": {
+          "projections": []
+        },
+        "Tooltips": {
+          "projections": []
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "clean"
+                        }
+                      },
+                      "Property": "Number of HH_3"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(clean.Number of HH_3)",
+              "nativeQueryRef": "Average of Number of HH_3",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "clean"
+                        }
+                      },
+                      "Property": "Number of HH_1"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(clean.Number of HH_1)",
+              "nativeQueryRef": "Sum of Number of HH_1"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "34a4769b687e8a041b60",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "clean"
+              }
+            },
+            "Property": "Ward name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7b2eac4b2b4ee18d07a6",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "clean"
+                  }
+                },
+                "Property": "Number of HH_1"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fe54fc43686b8c6d8a0e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "clean"
+                  }
+                },
+                "Property": "Number of HH_3"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

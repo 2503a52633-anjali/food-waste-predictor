@@ -1,0 +1,156 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "75bfe6ff3e10e01b10c0",
+  "position": {
+    "x": 759.52227005477482,
+    "y": 273.75734936933617,
+    "z": 9,
+    "height": 351.97373490343222,
+    "width": 339.62377929278546,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "clean"
+                    }
+                  },
+                  "Property": "Zone Name"
+                }
+              },
+              "queryRef": "clean.Zone Name",
+              "nativeQueryRef": "Zone Name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "clean"
+                        }
+                      },
+                      "Property": "Number of HH"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(clean.Number of HH)",
+              "nativeQueryRef": "Average of Number of HH"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "clean"
+                      }
+                    },
+                    "Property": "Number of HH"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'zone-wise hosehold distribution'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fcb7e315a8301684ca93",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "clean"
+              }
+            },
+            "Property": "Zone Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "90b00ec618a1bc970c0c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "clean"
+                  }
+                },
+                "Property": "Number of HH"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
